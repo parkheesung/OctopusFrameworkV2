@@ -14,5 +14,8 @@
     <releaseNotes>First Commit</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>OctopusFramework Octopus C# NetFramework Asp.NET MVC</tags>
+	<dependencies>
+	<dependency id="OctopusFramework.V2.Basis" version="0.1.0" />
+	</dependencies>
   </metadata>
 </package>
