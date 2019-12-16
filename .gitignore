@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/OctopusFramework/v16
+/OctopusFramework.V2.Basis/bin
+/OctopusFramework.V2.Basis/obj
+/OctopusFramework.V2.MVC/bin
+/OctopusFramework.V2.MVC/obj
+/packages

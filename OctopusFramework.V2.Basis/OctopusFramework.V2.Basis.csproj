@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5425778E-CDE4-40EC-BF38-77AFC21C6D10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OctopusFramework.V2.Basis</RootNamespace>
+    <AssemblyName>OctopusFramework.V2.Basis</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\IDualCryptoHelper.cs" />
+    <Compile Include="Abstracts\IEntity.cs" />
+    <Compile Include="Abstracts\ILogHelper.cs" />
+    <Compile Include="Abstracts\IOneWayCryptoHelper.cs" />
+    <Compile Include="Abstracts\ISecretCryptoHelper.cs" />
+    <Compile Include="Abstracts\IStringWrite.cs" />
+    <Compile Include="Abstracts\ITableBinder.cs" />
+    <Compile Include="Abstracts\ITwoWayCryptoHelper.cs" />
+    <Compile Include="Attributes\EntityAttribute.cs" />
+    <Compile Include="Attributes\EntityObject.cs" />
+    <Compile Include="Crypto\AES128Helper.cs" />
+    <Compile Include="Crypto\AES256Helper.cs" />
+    <Compile Include="Crypto\AESHelper.cs" />
+    <Compile Include="Crypto\Base64Helper.cs" />
+    <Compile Include="Crypto\CryptoHelperBase.cs" />
+    <Compile Include="Crypto\SecretCryptoHelperBase.cs" />
+    <Compile Include="Crypto\SHA256Helper.cs" />
+    <Compile Include="Crypto\SHA512Helper.cs" />
+    <Compile Include="Data\DBHelpers.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\EntityHelper.cs" />
+    <Compile Include="Helpers\ExtendEntityQueryHelper.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\QueryHelper.cs" />
+    <Compile Include="Models\MSSQLQueryItem.cs" />
+    <Compile Include="Models\ReturnValue.cs" />
+    <Compile Include="Models\ReturnValues.cs" />
+    <Compile Include="OctopusApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\ExtendHtmlTagParser.cs" />
+    <Compile Include="Web\HtmlExtendTag.cs" />
+    <Compile Include="Web\HtmlTag.cs" />
+    <Compile Include="Web\HtmlTagParser.cs" />
+    <Compile Include="Web\TagPosition.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
