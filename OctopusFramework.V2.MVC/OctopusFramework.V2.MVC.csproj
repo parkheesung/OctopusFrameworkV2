@@ -108,4 +108,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy OctopusFramework.V2.MVC.* ..\..\..\Nugets\Windows\OctopusFramework.V2.MVC\lib\net46</PostBuildEvent>
+  </PropertyGroup>
 </Project>

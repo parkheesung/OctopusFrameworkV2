@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OctopusFramework.V2.MVC</id>
+    <version>0.1.0</version>
+    <title>OctopusFramework V2 MVC Library</title>
+    <authors>Parkheesung</authors>
+    <owners>Parkheesung</owners>
+    <licenseUrl>https://github.com/parkheesung</licenseUrl>
+    <projectUrl>https://github.com/parkheesung/OctopusFrameworkV2</projectUrl>
+    <iconUrl>https://s.gravatar.com/avatar/d1559a7d1431389a32f3ede25571ed2e?s=80</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# Library in .Net Framework Asp.NET MVC</description>
+    <releaseNotes>First Commit</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>OctopusFramework Octopus C# NetFramework Asp.NET MVC</tags>
+  </metadata>
+</package>

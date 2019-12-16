@@ -8,3 +8,6 @@
 /OctopusFramework.V2.MVC/bin
 /OctopusFramework.V2.MVC/obj
 /packages
+*.nupkg
+/Nugets/Windows/OctopusFramework.V2.Basis/lib/net46
+/Nugets/Windows/OctopusFramework.V2.MVC/lib/net46

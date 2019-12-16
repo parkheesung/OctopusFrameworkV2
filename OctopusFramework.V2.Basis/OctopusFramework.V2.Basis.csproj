@@ -77,4 +77,7 @@
     <Compile Include="Web\TagPosition.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy OctopusFramework.V2.Basis.* ..\..\..\Nugets\Windows\OctopusFramework.V2.Basis\lib\net46</PostBuildEvent>
+  </PropertyGroup>
 </Project>
