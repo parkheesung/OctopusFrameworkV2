@@ -39,6 +39,7 @@ namespace OctopusFramework.V2.MVC
         #endregion [ IDisposable ]
 
         protected ConcurrentDictionary<string, GridColumn> columns { get; set; } = new ConcurrentDictionary<string, GridColumn>();
+        protected ConcurrentDictionary<string, string> rowAttrs { get; set; } = new ConcurrentDictionary<string, string>();
 
         protected List<T> list { get; set; } = new List<T>();
 
@@ -166,6 +167,10 @@ namespace OctopusFramework.V2.MVC
             }
         }
 
+        public virtual void RowAttributeSet(string key, string value)
+        {
+            rowAttrs.AddOrUpdate(key, value, (oldKey, oldValue) => value);
+        }
 
         public virtual GridColumn ColumnGet(string key)
         {
@@ -196,11 +201,13 @@ namespace OctopusFramework.V2.MVC
             EntityObject obj = null;
             StringBuilder tr_tags = new StringBuilder(200);
             StringBuilder row = new StringBuilder(200);
+            StringBuilder row_item = new StringBuilder(200);
             if (this.Data != null && this.Data.Count() > 0)
             {
                 foreach (var item in this.Data)
                 {
                     tr = new HtmlTag(Tags.TR);
+                    tr.Attributes = rowAttrs;
                     tr_tags.Clear();
                     KeyValuePair<int, ITableBinder> paramData = new KeyValuePair<int, ITableBinder>(this.SequenceNumber, item);
                     foreach (GridColumn col in this.Columns)
@@ -218,7 +225,12 @@ namespace OctopusFramework.V2.MVC
                         tr_tags.Append(td.Write());
                     }
                     tr.Content = tr_tags.ToString();
-                    row.Append(tr.Write());
+                    row_item = new StringBuilder(tr.Write());
+                    foreach(var t in item.GetColumns())
+                    {
+                        row_item.Replace("{" + t.PhysicalName + "}", $"{item.GetValue(t.PhysicalName)}");
+                    }
+                    row.Append(row_item.ToString());
                     this.SequenceNumber--;
                 }
                 tbody.Content = row.ToString();

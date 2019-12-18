@@ -78,6 +78,7 @@
     <Compile Include="Helpers\ExpressionHelper.cs" />
     <Compile Include="Helpers\GridHelper.cs" />
     <Compile Include="Helpers\LayoutHelper.cs" />
+    <Compile Include="Helpers\MVCHelper.cs" />
     <Compile Include="Helpers\PagingHelper.cs" />
     <Compile Include="Helpers\TagHelper.cs" />
     <Compile Include="Models\DictionaryHelper.cs" />

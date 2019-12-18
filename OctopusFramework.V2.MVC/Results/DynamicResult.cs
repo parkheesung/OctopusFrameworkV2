@@ -52,12 +52,39 @@ namespace OctopusFramework.V2.MVC
             return new DynamicResult(_page);
         }
 
+        public static DynamicResult Create(WebPage layout, HtmlTag tag, Encoding encoding = null)
+        {
+            var page = new DynamicResult();
+            page.Page = layout;
+            page.Page.Body.AppendLine(tag.Write());
+            if (encoding != null) page.encType = encoding;
+            return page;
+        }
+
         public static DynamicResult Grid(GridComponent grid, Encoding encoding = null)
         {
             var page = new DynamicResult();
             var table = new HtmlTag(Tags.TABLE);
             table.Content = grid.Write();
             page.HTML = table.Write();
+            if (encoding != null) page.encType = encoding;
+            return page;
+        }
+
+        public static DynamicResult Grid<T>(GridPackage<T> grid, HtmlTag tag = null, Encoding encoding = null) where T : ITableBinder
+        {
+            var page = new DynamicResult();
+            if (tag == null)
+            {
+                page.Page.Body.AppendLine(grid.Write());
+            }
+            else
+            {
+                tag.Content = grid.Write();
+                page.Page.Body.AppendLine(tag.Write());
+            }
+            page.Page.Body.AppendLine(grid.Paging.Write());
+
             if (encoding != null) page.encType = encoding;
             return page;
         }

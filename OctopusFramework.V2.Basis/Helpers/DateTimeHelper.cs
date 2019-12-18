@@ -14,6 +14,16 @@ namespace OctopusFramework.V2.Basis
             return dt.FirstDay().AddMonths(1).AddDays(-1);
         }
 
+        public static DateTime FirstTime(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0);
+        }
+
+        public static DateTime LastTime(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 59);
+        }
+
         public static DateTime PreviousMonth(this DateTime dt)
         {
             return dt.FirstDay().AddMonths(-1);
