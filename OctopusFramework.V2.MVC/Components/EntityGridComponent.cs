@@ -61,16 +61,21 @@ namespace OctopusFramework.V2.MVC
 
         public int SequenceNumber { get; set; } = 0;
 
+        public HtmlTag NoData { get; set; } = new HtmlTag(Tags.SPAN);
+        public string NoDataColumnClass { get; set; } = string.Empty;
+        public string NoDataColumnStyle { get; set; } = string.Empty;
 
         public EntityGridComponent(List<T> data) : base()
         {
             this.list = data;
+            this.NoData.Content = "no data";
         }
 
         public EntityGridComponent(List<T> data, int seqNumber) : base()
         {
             this.list = data;
             this.SequenceNumber = seqNumber;
+            this.NoData.Content = "no data";
         }
 
         public virtual void ColumnSet(Expression<Func<T, object>> p, int seq, string title, Func<object, object> columnExpression = null)
@@ -237,7 +242,7 @@ namespace OctopusFramework.V2.MVC
             }
             else
             {
-                tbody.Content = $"<tr><td colspan=\"{this.Columns.Count() + 1}\">no data</td></tr>";
+                tbody.Content = $"<tr><td class=\"{this.NoDataColumnClass}\" style=\"{this.NoDataColumnStyle}\" colspan=\"{this.Columns.Count() + 1}\">{this.NoData.Write()}</td></tr>";
             }
             builder.Append(tbody.Write());
 

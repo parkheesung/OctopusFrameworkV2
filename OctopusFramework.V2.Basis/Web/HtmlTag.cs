@@ -74,6 +74,53 @@ namespace OctopusFramework.V2.Web
             this.attributes.AddOrUpdate(key.Trim().ToLower(), value, (oldKey, oldValue) => value);
         }
 
+        public virtual void AppendAttribute(string key, string value, char splitChar = ',')
+        {
+            string temp = string.Empty;
+            if (this.attributes.TryGetValue(key, out temp))
+            {
+                if (!string.IsNullOrWhiteSpace(temp))
+                {
+                    value = $"{temp}{splitChar}{value}";
+                }
+
+                this.attributes.AddOrUpdate(key.Trim().ToLower(), value, (oldKey, oldValue) => value);
+            }
+            else
+            {
+                this.attributes.AddOrUpdate(key.Trim().ToLower(), value, (oldKey, oldValue) => value);
+            }
+        }
+
+        public virtual void RemoveAttribute(string key, string value, char splitChar = ',')
+        {
+            string temp = string.Empty;
+            if (this.attributes.TryGetValue(key, out temp))
+            {
+                if (!string.IsNullOrWhiteSpace(temp))
+                {
+                    StringBuilder builder = new StringBuilder(200);
+                    string[] values = temp.Split(splitChar);
+                    int num = 0;
+                    foreach(string val in values)
+                    {
+                        if (value.Equals(val, System.StringComparison.OrdinalIgnoreCase) == false)
+                        {
+                            if (num > 0) builder.Append(splitChar);
+                            builder.Append(val);
+                            num++;
+                        }
+                    }
+                    this.attributes.AddOrUpdate(key.Trim().ToLower(), builder.ToString(), (oldKey, oldValue) => builder.ToString());
+                }
+            }
+        }
+
+        public virtual void ClearAttribute()
+        {
+            this.attributes.Clear();
+        }
+
         public string GetValue(string key)
         {
             string result = string.Empty;

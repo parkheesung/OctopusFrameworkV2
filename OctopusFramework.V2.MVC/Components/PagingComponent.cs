@@ -51,6 +51,8 @@ namespace OctopusFramework.V2.MVC
         protected HtmlTag parentTag { get; set; } = new HtmlTag(Tags.UL);
         protected HtmlTag itemTag { get; set; } = new HtmlTag(Tags.LI);
 
+        public HtmlTag NumberTag { get; set; } = new HtmlTag(Tags.A);
+
         protected string _parentTag { get; set; } = Tags.UL;
         protected string _tag { get; set; } = Tags.LI;
 
@@ -216,37 +218,13 @@ namespace OctopusFramework.V2.MVC
             {
                 foreach (int pageNo in GetArray())
                 {
-                    itemTag.Content = $"{pageNo}";
+                    NumberTag.Content = $"{pageNo}";
+                    itemTag.Content = NumberTag.Write();
                     if (this.CurPage == pageNo)
                     {
-                        string normalClass = string.Empty;
-                        if (!String.IsNullOrWhiteSpace(ActiveClass))
-                        {
-                            string tmp = string.Empty;
-                            if (itemTag.Attributes.TryGetValue("class", out tmp))
-                            {
-                                normalClass = tmp;
-                                itemTag.SetAttribute("class", $"{tmp} {this.ActiveClass}");
-                            }
-                            else
-                            {
-                                itemTag.SetAttribute("class", this.ActiveClass);
-                            }
-                        }
+                        if (!String.IsNullOrWhiteSpace(ActiveClass)) itemTag.AppendAttribute("class", ActiveClass, ' ');
                         builder.Append(itemTag.Write().Replace("{PageNumber}", $"{pageNo}"));
-                        if (!String.IsNullOrWhiteSpace(ActiveClass))
-                        {
-                            string tmp = string.Empty;
-                            if (!String.IsNullOrWhiteSpace(normalClass))
-                            {
-                                itemTag.SetAttribute("class", $"{normalClass}");
-                                normalClass = string.Empty;
-                            }
-                            else
-                            {
-                                itemTag.SetAttribute("class", "");
-                            }
-                        }
+                        if (!String.IsNullOrWhiteSpace(ActiveClass)) itemTag.RemoveAttribute("class", ActiveClass, ' ');
                     }
                     else
                     {
