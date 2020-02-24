@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace OctopusFramework.V2.Basis
+namespace OctopusFramework.V2.Common
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class EntityAttribute : Attribute

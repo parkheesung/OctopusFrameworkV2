@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OctopusFramework.V2.Basis
+namespace OctopusFramework.V2.Common
 {
     public class FileHelper
     {

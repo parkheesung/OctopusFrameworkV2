@@ -1,4 +1,4 @@
-﻿namespace OctopusFramework.V2.Basis
+﻿namespace OctopusFramework.V2.Common
 {
     public class ReturnValues<T> : ReturnValue where T : class
     {

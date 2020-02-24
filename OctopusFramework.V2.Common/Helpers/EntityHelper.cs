@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace OctopusFramework.V2.Basis
+namespace OctopusFramework.V2.Common
 {
     public class EntityHelper
     {

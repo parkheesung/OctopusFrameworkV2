@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
-using OctopusFramework.V2.Basis;
+using OctopusFramework.V2.Common;
 
 namespace OctopusFramework.V2.Web
 {

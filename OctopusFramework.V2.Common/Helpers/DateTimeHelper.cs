@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OctopusFramework.V2.Basis
+namespace OctopusFramework.V2.Common
 {
     public static class DateTimeHelper
     {

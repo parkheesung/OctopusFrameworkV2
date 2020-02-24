@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace OctopusFramework.V2.Basis
+namespace OctopusFramework.V2.Common
 {
     public class EntityObject
     {
