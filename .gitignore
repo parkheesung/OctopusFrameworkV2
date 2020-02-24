@@ -11,3 +11,5 @@
 *.nupkg
 /Nugets/Windows/OctopusFramework.V2.Basis/lib/net46
 /Nugets/Windows/OctopusFramework.V2.MVC/lib/net46
+/OctopusFramework.V2.Common/bin/Release/netstandard2.0
+/OctopusFramework.V2.Common/obj

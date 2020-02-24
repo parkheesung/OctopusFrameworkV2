@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctopusFramework.V2.MVC", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9360D6CF-25C9-4E35-A5A6-CBE36AC2F515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctopusFramework.V2.Common", "OctopusFramework.V2.Common\OctopusFramework.V2.Common.csproj", "{3ED085BE-AD57-47BC-AC3C-5239EA7A82EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5EB559F2-76D3-4DE7-B87F-CC9555697AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EB559F2-76D3-4DE7-B87F-CC9555697AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EB559F2-76D3-4DE7-B87F-CC9555697AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED085BE-AD57-47BC-AC3C-5239EA7A82EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED085BE-AD57-47BC-AC3C-5239EA7A82EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED085BE-AD57-47BC-AC3C-5239EA7A82EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED085BE-AD57-47BC-AC3C-5239EA7A82EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5425778E-CDE4-40EC-BF38-77AFC21C6D10} = {D204761C-E335-47C7-8462-7CE0C6F42191}
 		{5EB559F2-76D3-4DE7-B87F-CC9555697AC3} = {D204761C-E335-47C7-8462-7CE0C6F42191}
+		{3ED085BE-AD57-47BC-AC3C-5239EA7A82EF} = {9360D6CF-25C9-4E35-A5A6-CBE36AC2F515}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CC3C702-D616-4347-9236-06C8C02C7DF6}

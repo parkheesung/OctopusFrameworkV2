@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OctopusFramework.V2.Common</id>
+    <version>0.1.0</version>
+    <title>OctopusFramework V2 .net standard Library</title>
+    <authors>Parkheesung</authors>
+    <owners>Parkheesung</owners>
+    <licenseUrl>https://github.com/parkheesung</licenseUrl>
+    <projectUrl>https://github.com/parkheesung/OctopusFrameworkV2</projectUrl>
+    <iconUrl>https://s.gravatar.com/avatar/d1559a7d1431389a32f3ede25571ed2e?s=80</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# Standard Library in .Net Framework</description>
+    <releaseNotes>First</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>OctopusFramework Octopus C# NetFramework</tags>
+  </metadata>
+</package>

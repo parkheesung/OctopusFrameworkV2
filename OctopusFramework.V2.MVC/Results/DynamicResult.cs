@@ -11,18 +11,31 @@ namespace OctopusFramework.V2.MVC
     {
         public WebPage Page { get; set; }
 
-        public string HTML { get; set; } = string.Empty;
+        public string HTML
+        {
+            get
+            {
+                return this.builder.ToString();
+            }
+            set
+            {
+                this.builder = new StringBuilder(value);
+            }
+        }
+
         public Encoding encType { get; set; } = Encoding.UTF8;
+
+        public StringBuilder builder = new StringBuilder();
 
         public StringBuilder Body
         {
             get
             {
-                return this.Page.Body;
+                return builder;
             }
             set
             {
-                this.Page.Body = value;
+                this.builder = value;
             }
         }
 

@@ -48,8 +48,8 @@ namespace OctopusFramework.V2.MVC
 
         public string ActiveClass { get; set; } = string.Empty;
 
-        protected HtmlTag parentTag { get; set; } = new HtmlTag(Tags.UL);
-        protected HtmlTag itemTag { get; set; } = new HtmlTag(Tags.LI);
+        public HtmlTag parentTag { get; set; } = new HtmlTag(Tags.UL);
+        public HtmlTag itemTag { get; set; } = new HtmlTag(Tags.LI);
 
         public HtmlTag NumberTag { get; set; } = new HtmlTag(Tags.A);
 
@@ -186,7 +186,7 @@ namespace OctopusFramework.V2.MVC
             }
         }
 
-        protected virtual List<int> GetArray()
+        public virtual List<int> GetArray()
         {
             var result = new List<int>();
 
